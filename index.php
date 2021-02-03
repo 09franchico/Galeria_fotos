@@ -9,16 +9,24 @@ $dados = new cadastrar("db_fotos","localhost:3307","root","");
 if(isset($_POST["titulo"])){
 
     $titulo = $_POST ["titulo"];
-    $imagem = $_FILES["imagem"]["name"].rand(1,999).'.png';
-     // mover a foto para a pasta img
-    move_uploaded_file($_FILES["imagem"]["tmp_name"],"imagens/".$imagem);
+    
+    if(!empty($titulo)){      
+        if($_FILES["imagem"]["type"] == "image/png" || $_FILES["imagem"]["type"] == "image/jpeg" ){
 
-    if(!empty($titulo) && !empty($imagem)){
+            $imagem = $_FILES["imagem"]["name"].rand(1,999).'.png';
+            move_uploaded_file($_FILES["imagem"]["tmp_name"],"imagens/".$imagem);
+            $dados ->salvar($titulo,$imagem);
+             header("location:index.php");
+
+        }else{
+
+            echo"<script> alert ('FORMATO NÂO COMPATIVEL')</script>";
+        }
+
         
-        $dados ->salvar($titulo,$imagem);
-        header("location:index.php");
 
     }else{
+
         echo"<script> alert ('PREENCHA OS CAMPOS')</script>";
     }
 
