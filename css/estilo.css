@@ -11,14 +11,15 @@ body{
     justify-content: center;
     padding: 20px;
     font: roboto;
-    background: url(../img/red.jpg);
+    background: url(../img/fot.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
 }
 
 .btn-cont{
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(245, 104, 186);
+    background: url(../img/fot.jpg);    
     padding: 30px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 0px ;

@@ -19,7 +19,7 @@ if(isset($_POST["titulo"])){
         header("location:index.php");
 
     }else{
-        echo"<script> alert ('Dados não cadastrados')</script>";
+        echo"<script> alert ('PREENCHA OS CAMPOS')</script>";
     }
 
 
@@ -54,7 +54,7 @@ if(isset($_GET["id"])){
     <div class="conteiner">
         <div class="btn-cont">
             <form action="index.php" method="POST" enctype="multipart/form-data">
-                <input type="text" name="titulo" placeholder="Titulo"><br><br>
+                <input type="text" name="titulo" placeholder="TITULO FOTO"><br><br>
                 <input id="file" type="file" name="imagem"><br><br>
                 <button type="submit">SALVAR</button>
             </form>
